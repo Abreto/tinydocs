@@ -1,0 +1,22 @@
+{
+  "name": "tinydocs",
+  "version": "0.1.0",
+  "description": "Tiny documents used in a small team secretly.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abreto/tinydocs.git"
+  },
+  "author": "Abreto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abreto/tinydocs/issues"
+  },
+  "homepage": "https://github.com/Abreto/tinydocs#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

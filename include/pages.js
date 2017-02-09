@@ -16,8 +16,19 @@ module.exports = function() {
     }
 
     this.get_page_content = function (p) {
-        var file = fs.readFileSync(path.join(this.storage,p+'.md'));
+        var fp = path.join(this.storage,p+'.md');
+        if( !fs.existsSync(fp) )
+            fs.writeFileSync(fp, '');
+        var file = fs.readFileSync(fp);
         return file.toString('utf8');
+    };
+
+    this.put_page_content = function (title, content) {
+        var file = path.join(this.storage, title+'.md');
+        fs.writeFile(file, content, (err) => {
+            if (err) throw err;
+            console.log(title+'.md\'s saved!');
+        });
     };
 
     return this;

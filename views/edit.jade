@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1 Login
-  p please log in.
-  p #{data}
+  h1 Edit <code>#{title}.md</code>
+  form(method='post')
+    textarea(name='content' rows='24' cols='80')!= content
+    p
+      input(type='submit')

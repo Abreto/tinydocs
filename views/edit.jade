@@ -2,7 +2,25 @@ extends layout
 
 block content
   h1 Edit <code>#{title}.md</code>
+  p (You can use <code>TAB</code> in textarea)
   form(method='post')
     textarea(name='content' rows='24' cols='80')!= content
     p
       input(type='submit')
+  script.
+    var textarea = document.getElementsByTagName('textarea')[0];
+    console.log(textarea);
+    textarea.onkeydown = function(e) {
+      if (e.keyCode == 9) {
+        e.preventDefault();
+        var indent = "\t";
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+        var selected = window.getSelection().toString();
+        selected = indent + selected.replace(/\n/g, '\n' + indent);
+        this.value = this.value.substring(0, start) + selected
+                            + this.value.substring(end);
+        this.setSelectionRange(start + indent.length, start
+                            + selected.length);
+      }
+    }

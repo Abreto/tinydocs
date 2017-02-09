@@ -18,7 +18,7 @@ module.exports = function() {
     this.get_page_content = function (p) {
         var fp = path.join(this.storage,p+'.md');
         if( !fs.existsSync(fp) )
-            fs.writeFileSync(fp, '');
+            fs.writeFileSync(fp, '# '+p);
         var file = fs.readFileSync(fp);
         return file.toString('utf8');
     };

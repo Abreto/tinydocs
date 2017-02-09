@@ -6,8 +6,8 @@ var marked = require('marked');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var pl = pages.get_page_list();
-  var ct = marked(pages.get_page_content('home'));
-  res.render('index', { title:'home' , pages: pl , content: ct });
+  var ct = marked(pages.get_page_content('hello'));
+  res.render('index', { title:'hello' , pages: pl , content: ct });
 });
 
 router.get('/:title', function(req, res, next) {

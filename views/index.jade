@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div!= content
+  hr/
+  ul
+    each p in pages
+      li
+        a(href="/#{p}") #{p}
+        |  
+        a(href="/#{p}/edit") Edit

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Please sign in
+  p
+    input(type='password' id='passcode' placeholder='passcode here')
+  p
+    button(onClick='login()') Login
+  script.
+    function login() {
+      var pc = escape(document.getElementById('passcode').value);
+      document.cookie='p='+pc;
+      location.reload(true);
+    }

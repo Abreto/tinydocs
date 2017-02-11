@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // authenticate first
-//app.use(auth(config));
+app.use(auth(config));
 
 app.use('/', index);
 app.use('/users', users);
